@@ -39,7 +39,8 @@
 
         }
 
-       // Simplificado (bem menor kk)
+
+       // Método 2: Simplificado
 
 
         if (!interaction.guild.members.me.permissions.has('Administrator')) {
