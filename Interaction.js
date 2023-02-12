@@ -38,3 +38,17 @@
             }
 
         }
+
+       // Simplificado (bem menor kk)
+
+
+        if (!interaction.guild.members.me.permissions.has('Administrator')) {
+
+            let embedNoPerm = new Discord.EmbedBuilder()
+                .setColor('#FF0000')
+                .setDescription(`❌  *Para o meu bom funcionamento eu necessito da permisão de **Administrador**, após me conceder a permissão tente novamente.*`)
+
+            return interaction.reply({ embeds: [embedNoPerm], ephemeral: true }).catch(() => {
+                return interaction.followUp({ embeds: [embedNoPerm], ephemeral: true }).catch(() => { })
+            })
+        }
